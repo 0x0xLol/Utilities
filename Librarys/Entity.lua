@@ -1,11 +1,11 @@
-local Entity = {}
+local Library = {}
 
 local PlayerService = game:GetService("Players")
 
-Entity.GetLocalPlayer = function()
+Library.GetLocalPlayer = function()
 	return PlayerService.LocalPlayer
 end
-Entity.GetPlayer = function(Name)
+Library.GetPlayer = function(Name)
 	for _, plrs in PlayerService:GetPlayers() do
 		if plrs.Name == Name then
 			return plrs
@@ -14,11 +14,11 @@ Entity.GetPlayer = function(Name)
 	print("Failed to get Player.")
 	return nil
 end
-Entity.GetCharacter = function()
-	return Entity.GetPlayer().Character
+Library.GetCharacter = function()
+	return Library.GetPlayer().Character
 end
-Entity.GetCharacterFromWorkspace = function()
-	return workspace:FindFirstChild(Entity.GetLocalPlayer().Name)
+Library.GetCharacterFromWorkspace = function()
+	return workspace:FindFirstChild(Library.GetLocalPlayer().Name)
 end
 
-return Entity
+return Library
