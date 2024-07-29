@@ -11,7 +11,6 @@ Library.GetPlayer = function(Name)
 			return plrs
 		end
 	end
-	print("Failed to get Player.")
 	return nil
 end
 Library.GetCharacter = function()
